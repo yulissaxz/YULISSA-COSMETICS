@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Precio de Venta</title>
+</head>
+<body>
+  <h2>Calculadora de Precio de Venta</h2>
+
+  <label>Costo de materia prima: <input type="number" id="materiaPrima" step="0.01"></label><br><br>
+  <label>Costo de mano de obra: <input type="number" id="manoObra" step="0.01"></label><br><br>
+  <label>Gastos de fabricación: <input type="number" id="gastosFabricacion" step="0.01"></label><br><br>
+
+  <button onclick="calcularPrecioVenta()">Calcular</button>
+
+  <h3 id="resultado"></h3>
+
+  <script>
+    function calcularPrecioVenta() {
+      const materiaPrima = parseFloat(document.getElementById('materiaPrima').value) || 0;
+      const manoObra = parseFloat(document.getElementById('manoObra').value) || 0;
+      const gastosFabricacion = parseFloat(document.getElementById('gastosFabricacion').value) || 0;
+
+      const costoProduccion = materiaPrima + manoObra + gastosFabricacion;
+      const precioVenta = costoProduccion * 1.55;
+
+      document.getElementById('resultado').innerHTML =
+        `Costo de producción: $${costoProduccion.toFixed(2)}<br>` +
+        `Precio de venta (con 55% de ganancia): $${precioVenta.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

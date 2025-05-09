@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sentencia Switch</title>
+</head>
+<body>
+    <p>Sentencia switch en JavaScript</p>
+
+    <script>
+        alert("Página con uso de la sentencia switch\nOpciones:\n1. Opción 1\n2. Opción 2\n3. Opción 3");
+
+        var n1 = parseInt(prompt("Selecciona una opción:"));
+        document.write("Número: " + n1 + "<br>");
+
+        switch (n1) {
+            case 1:
+                document.write("<br>Seleccionaste opción 1<br>");
+                break;
+            case 2:
+                document.write("<br>Seleccionaste opción 2<br>");
+                break;
+            case 3:
+                document.write("<br>Seleccionaste opción 3<br>");
+                break;
+            default:
+                document.write("<br>¡Esa opción no existe! ERROR 494...<br>");
+                break;
+        }
+    </script>
+</body>
+</html>

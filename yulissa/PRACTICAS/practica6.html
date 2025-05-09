@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BUCLE WHILE</title>
+	<script type="text/javascript">
+		function repite() {
+			let num = document.repetir.numero.value;
+			num = Number(num);
+			let texto = document.getElementById("respuesta");
+			let i = 0;
+
+			if (num < 1 || num > 20 || isNaN(num)) {
+				texto.innerHTML = "La siguiente frase no se repite porque no has escrito un número del 1 al 20.<br/>";
+			} else {
+				texto.innerHTML = "Voy a repetir una frase " + num + " veces.<br/>";
+				while(i < num) {
+					i++;
+					texto.innerHTML += i + ". Esta es una frase repetida.<br/>";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Utilizar el bucle while</h1>
+	<form action="#" name="repetir">
+		<input type="text" name="numero"> Escribe un número del 1 al 20<br/><br/>
+		<input type="button" onclick="repite()" value="Pulsa para repetir"/>
+	</form>
+	<p id="respuesta"></p>
+</body>
+</html>
